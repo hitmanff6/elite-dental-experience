@@ -214,7 +214,7 @@ export const services: Service[] = [
     description:
       "Modern endodontics under magnification is nothing like its reputation. Using rotary nickel-titanium files, apex locators and a surgical microscope, we clean and seal the canal system precisely, usually in one appointment.",
     image: technologyImg,
-    icon: "ShieldPlus",
+    icon: "ShieldCheck",
     duration: "60 – 120 minutes",
     from: "$680",
     benefits: [
@@ -387,7 +387,7 @@ export const technologies = [
     body: "A wand-sized camera replaces impression trays, capturing 6,000 frames per second for a perfect digital model.",
   },
   {
-    icon: "Radiation",
+    icon: "Radar",
     title: "Low-Dose CBCT",
     body: "Volumetric imaging at up to 80% less radiation, revealing bone, nerve and sinus anatomy in three dimensions.",
   },
@@ -397,7 +397,7 @@ export const technologies = [
     body: "In-house milling and sintering means crowns are designed, made and fitted within a single appointment.",
   },
   {
-    icon: "Laser",
+    icon: "Zap",
     title: "Soft-Tissue Laser",
     body: "Precise gum contouring with minimal bleeding, faster healing and, in most cases, no sutures.",
   },

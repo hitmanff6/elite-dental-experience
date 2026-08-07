@@ -7,10 +7,10 @@ import { DoctorCard } from "@/components/site/doctors-section";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
-import { doctors } from "@/lib/site-data";
+import { doctors, type Doctor } from "@/lib/site-data";
 
 export const Route = createFileRoute("/doctors/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { doctor: Doctor } => {
     const doctor = doctors.find((d) => d.slug === params.slug);
     if (!doctor) throw notFound();
     return { doctor };

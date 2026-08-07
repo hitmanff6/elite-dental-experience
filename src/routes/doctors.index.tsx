@@ -5,7 +5,7 @@ import { DoctorsSection } from "@/components/site/doctors-section";
 import { PageHero } from "@/components/site/page-hero";
 import { TestimonialsCarousel } from "@/components/site/testimonials-carousel";
 
-export const Route = createFileRoute("/doctors")({
+export const Route = createFileRoute("/doctors/")({
   head: () => ({
     meta: [
       { title: "Our Dentists & Specialists | Aurelia Dental Studio" },

@@ -9,10 +9,10 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ServiceCard } from "@/components/site/services-grid";
 import { TestimonialsCarousel } from "@/components/site/testimonials-carousel";
-import { services } from "@/lib/site-data";
+import { services, type Service } from "@/lib/site-data";
 
 export const Route = createFileRoute("/services/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { service: Service } => {
     const service = services.find((s) => s.slug === params.slug);
     if (!service) throw notFound();
     return { service };

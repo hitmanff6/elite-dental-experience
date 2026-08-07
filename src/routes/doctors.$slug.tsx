@@ -48,7 +48,7 @@ export const Route = createFileRoute("/doctors/$slug")({
 });
 
 function DoctorDetailPage() {
-  const { doctor } = Route.useLoaderData();
+  const { doctor } = Route.useLoaderData() as { doctor: Doctor };
   const others = doctors.filter((d) => d.slug !== doctor.slug);
 
   return (

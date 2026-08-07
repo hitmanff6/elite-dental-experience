@@ -26,10 +26,15 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const cards = [
-    { icon: Phone, label: "Call the studio", value: clinic.phone, href: `tel:${clinic.phoneRaw}` },
+    { icon: Phone, label: "Call the studio", value: clinic.phone, href: `tel:${clinic.phone.replace(/[^+\d]/g, "")}` },
     { icon: Mail, label: "Email us", value: clinic.email, href: `mailto:${clinic.email}` },
-    { icon: MapPin, label: "Visit us", value: clinic.address, href: clinic.mapsUrl },
-    { icon: Clock, label: "Opening hours", value: clinic.hoursShort },
+    {
+      icon: MapPin,
+      label: "Visit us",
+      value: clinic.locations[0].address,
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(clinic.locations[0].address)}`,
+    },
+    { icon: Clock, label: "Opening hours", value: clinic.hours.map((h) => `${h.day}: ${h.time}`).join(" · ") },
   ];
 
   return (

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
@@ -14,7 +14,7 @@ export function PageHero({
   eyebrow: string;
   title: string;
   body?: string;
-  breadcrumbs: { label: string; to?: string }[];
+  breadcrumbs: { label: string; to?: LinkProps["to"] }[];
   children?: ReactNode;
 }) {
   return (

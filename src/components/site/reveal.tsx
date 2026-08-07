@@ -3,7 +3,7 @@ import { useRef, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-const variants: Record<string, Variants> = {
+const variants = {
   up: {
     hidden: { opacity: 0, y: 34 },
     show: { opacity: 1, y: 0 },
@@ -28,7 +28,9 @@ const variants: Record<string, Variants> = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   },
-};
+} satisfies Record<string, Variants>;
+
+type Direction = keyof typeof variants;
 
 /** Scroll-triggered reveal wrapper used across every section. */
 export function Reveal({
@@ -41,7 +43,7 @@ export function Reveal({
 }: {
   children: ReactNode;
   className?: string;
-  direction?: keyof typeof variants;
+  direction?: Direction;
   delay?: number;
   duration?: number;
   as?: "div" | "section" | "li" | "span" | "article";
@@ -97,7 +99,7 @@ export function RevealItem({
 }: {
   children: ReactNode;
   className?: string;
-  direction?: keyof typeof variants;
+  direction?: Direction;
 }) {
   return (
     <motion.div

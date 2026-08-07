@@ -31,8 +31,8 @@ function ContactPage() {
     {
       icon: MapPin,
       label: "Visit us",
-      value: clinic.locations[0].address,
-      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(clinic.locations[0].address)}`,
+      value: clinic.locations[0]!.address,
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(clinic.locations[0]!.address)}`,
     },
     { icon: Clock, label: "Opening hours", value: clinic.hours.map((h) => `${h.day}: ${h.time}`).join(" · ") },
   ];

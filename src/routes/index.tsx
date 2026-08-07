@@ -1,24 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { BeforeAfter } from "@/components/site/before-after";
+import { CtaBand } from "@/components/site/cta-band";
+import { DoctorsSection } from "@/components/site/doctors-section";
+import { FaqSection } from "@/components/site/faq-section";
+import { Hero } from "@/components/site/hero";
+import { JourneySection } from "@/components/site/journey-section";
+import { ServicesGrid } from "@/components/site/services-grid";
+import { StatsBand } from "@/components/site/stats-band";
+import { TechnologySection } from "@/components/site/technology-section";
+import { TestimonialsCarousel } from "@/components/site/testimonials-carousel";
+import { WhyChooseUs } from "@/components/site/why-choose-us";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Aurelia Dental Studio | World-Class Dental Care in San Francisco" },
+      {
+        name: "description",
+        content:
+          "Transform your smile with specialist-led implants, veneers and clear aligners. Digitally planned, comfort-first dentistry with fixed written pricing.",
+      },
+      { property: "og:title", content: "Aurelia Dental Studio | World-Class Dental Care" },
+      {
+        property: "og:description",
+        content:
+          "Specialist-led dentistry in San Francisco: implants, veneers, aligners and same-day emergency care.",
+      },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <StatsBand />
+      <WhyChooseUs />
+      <ServicesGrid limit={4} />
+      <BeforeAfter />
+      <DoctorsSection />
+      <TechnologySection />
+      <JourneySection />
+      <TestimonialsCarousel />
+      <FaqSection />
+      <CtaBand />
+    </>
   );
 }

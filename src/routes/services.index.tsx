@@ -5,7 +5,7 @@ import { JourneySection } from "@/components/site/journey-section";
 import { PageHero } from "@/components/site/page-hero";
 import { ServicesGrid } from "@/components/site/services-grid";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Dental Services in San Francisco | Aurelia Dental Studio" },

@@ -50,7 +50,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
 
         <div className="flex flex-wrap gap-2 pt-2">
           <Button asChild variant="hero" size="sm">
-            <Link to="/book" search={{ doctor: doctor.slug }}>
+            <Link to="/book">
               <CalendarCheck className="size-4" />
               Book
             </Link>
